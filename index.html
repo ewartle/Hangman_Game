@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game by Lisa Ewart</title>
+
+	  <meta charset="UTF-8">
+	  <title>rps</title>
+	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	  <script src="assets/javascript/game.js"></script> 
+
+</head>
+<body>
+
+	<div class="wrapper">
+
+	<header>
+		<div class = "container-fluid">
+
+			 <h1>Hangman:  Farm Edition!!</h1>
+		
+		</div>
+
+	</header>
+
+	<div class = "container">
+
+		<div class = "row">
+
+			<div class = "col-md-12">
+
+				<div class = "BoxIndex">
+
+					<h2>Click below to get started!</h2>
+
+							<input type="button" value="Click Here" onclick="myFunction()" />
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class = "row">
+
+			<div class = "col-md-6">
+
+				<div class = "BoxIndex">
+
+					<div>
+
+					<img id="farm" src= "assets/images/farm.png" class="img-rounded" alt="image of farm" width=300 height=600>
+
+					</div>
+
+					<!--This image will need to change when the correct word appears.  This will need to be coded such as when word X appears, then photo X appears-->
+
+				</div>
+
+			</div>
+
+			<div class ="col-md-6">
+
+				<div class = "BoxIndex">
+
+					<div class = row>
+
+						<div class="col-md-12">
+
+							<h1><span id="word"><strong>??????</strong></span></h1>
+
+											
+					<!--This will be a box that will make the word appear when it is correctly guessed-->
+
+						</div>
+
+					</div>
+
+					<div class = row>
+
+						<div class="col-md-12">
+
+							<div class=BoxIndex2>
+								<h2>Number of wins: <span id="wins"><strong> 0 </strong></span></h2>
+
+								<!--<h6>WINS APPEAR HERE</h6>-->
+							</div> 
+
+						</div>
+
+					</div>
+
+					<div class = row>
+
+						<div class="col-md-12">
+
+							<h2> Current Word: </h2>
+
+							<!--<h2>Place for the letters appears here</h2>-->
+
+							<h3><span id="user-text1"><strong> _ </strong></span><span id="user-text2"><strong> _ </strong></span><span id="user-text3"><strong> _ </strong></span><span id="user-text4"><strong> _ </strong></span><span id="user-text5"><strong> _ </strong></span></h3>
+
+						</div>
+
+					</div>
+
+					<div class = row>
+
+						<div class="col-md-12">
+
+							<h2>Number of guesses remaining: <span id="numGuess"><strong> 12 </strong></span></h2>
+
+						</div>
+
+					</div>
+
+					<div class = row>
+
+						<div class="col-md-12">
+
+							<h2>Letters already guessed:</h2>
+
+							<h3><span id="missed1"><strong>  </strong></span> <span id="missed2"><strong>  </strong></span><span id="missed3"><strong>  </strong></span><span id="missed4"><strong>  </strong></span><span id="missed 5"><strong>  </strong></span> <span id="missed6"><strong>  </strong></span> <span id="missed7"><strong>  </strong></span><span id="missed8"><strong>  </strong></span><span id="missed9"><strong>  </strong></span><span id="missed10"><strong>  </strong></span><span id="missed11"><strong>  </strong></span> <span id="missed12"><strong>  </strong></span><span id="missed13"><strong>  </strong></span></h3>
+
+							<!--Place for the letters already guessed.  Will not appear twice-->
+
+						</div>
+
+					</div>
+
+					<div class = row>
+
+						<div class = col-md-12>
+
+							<input type="button" value="Click Here for a new word." onclick="myFunction2()" />
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+<!--			row 2:  The area where the word will appear when it is guessed.
+
+<!--			row three / two columns:  
+
+<!--				Column 1 is the place where the farm picture will be and the picture of the animal or object will appear when the word is correct.
+				
+<!--				column 2 is the place where the game will appear:
+
+					"wins" and place where wins appear starting with 0
+
+					"current word" with the number of underlines for the current word. 
+
+					Letters already guessed:  Write a function where teh letters that have already been guessed are included.
+
+					number of guesses:  This will go down as the letters are incorrectly guessed. Note that if a letter has already been guessed, it will not be counted against the person if it is guessed again.   
+
+
+-->
+
+	</div>
+
+  		<div class="push"></div>
+
+  		   
+    	<footer class="footer">
+    
+    		<p>&copy;Copyright 2017 Lisa Ewart</p>
+
+   		</footer>
+
+</body>
+</html>
