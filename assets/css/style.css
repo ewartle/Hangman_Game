@@ -90,14 +90,11 @@ footer {
 	text-align: center;
 }
 
-button {
+#click-me {
 	font-family: "Georgia", Times, "Times New Roman", serif;
-	background-color: #377BBF;
-	clear: both;
 	padding: 15px;
 	border-style: solid;
 	border-color: #377BBF;
-	border-width: 1px;
+	border-width: 10px;
 	text-align: center;
-	margin: 100px;
-}
+	}
