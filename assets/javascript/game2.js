@@ -71,7 +71,7 @@ $(document).ready(function() {
         }
       } 
 
-      //this if/else statements handles the treatment if the user guess is in the word.
+      //these if/else statements handles the treatment if the user guess is in the word.
       if(placeholder){
 
           if (userGuess===wordCurrent[0]){
@@ -176,43 +176,42 @@ $(document).ready(function() {
               guessCount--;
               $("#numGuess").html(guessCount);
               $("#wrong").append(userGuess + " ");
-                       
-            }     
-                          
-            else{
+          }     
+        //This code alerts when the guessCount is down to zero.                  
+           else{
             alert("Sorry, you lose. Please hit your browser's refresh button and then click on 'Click Me'."); 
             $("#noPlace").append(userGuess);
             $("#noPlace").hide();
-            }
+           }
         } 
     });
   }
     
   match ();
-    
+  //**The code below is me trying to come up with a reset.  I was not successful in this effort.  
 
-  $("#clear").on("click", function() {
+  //$("#clear").on("click", function() {
                      
-    var guessCount=8;
-    $("#display2").empty();
-    $("#numGuess").html(guessCount);
-    $("#wins").html(wins);
+   // var guessCount=8;
+   // $("#display2").empty();
+   // $("#numGuess").html(guessCount);
+   // $("#wins").html(wins);
     //$("#currentWord").empty();
     //usedWordsList.push(wordCurrent);
     //newWord();
     
-  }); 
+  //}); 
 
-  var newWord = function(){
-    var generateNew = function(){
-      var random = Math.floor((Math.random()*(wordList.length)));
-      wordCurrent=wordList[random];
-    }
-    generateNew();
-    console.log(wordCurrent);
-    blank();    
+  //var newWord = function(){
+    //var generateNew = function(){
+      //var random = Math.floor((Math.random()*(wordList.length)));
+      //wordCurrent=wordList[random];
+    //}
+    //generateNew();
+    //console.log(wordCurrent);
+    //blank();    
     //match();
-  }
+  //}
 
 }); 
     
