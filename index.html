@@ -35,10 +35,9 @@
 
 					<h2>Click below to get started!</h2>
 
-						<h3 id="click-me">CLICK ME!</h3>
+						<buttom id="click-me">CLICK ME!</button>
 
-							<!--<input type="button" value="Click Here" onclick="myFunction()" />-->
-
+													
 				</div>
 
 			</div>
@@ -57,8 +56,7 @@
 
 					</div>
 
-					<!--This image will need to change when the correct word appears.  This will need to be coded such as when word X appears, then photo X appears-->
-
+					
 				</div>
 
 			</div>
@@ -74,27 +72,24 @@
 							<h2><span id="word"><strong>??????</strong></span></h2>
 
 							<h1><span id="currentWord"><strong>  </strong></span></h1>
-
-											
-					<!--This will be a box that will make the word appear when it is correctly guessed-->
-
+					
 						</div>
 
 					</div>
 
-					<!--<div class = row>
+					<div class = row>
 
 						<div class="col-md-12">
 
 							<div class=BoxIndex2>
 								<h2>Number of wins: <span id="wins"><strong> 0 </strong></span></h2>
 
-								<h6>WINS APPEAR HERE</h6>
+								
 							</div> 
 
 						</div>
 
-					</div> -->
+					</div> 
 
 					<div class = row>
 
@@ -107,8 +102,7 @@
 								<h3><span id="wordBlanks"><strong> </strong></span></h3>
 
 							</div>
-
-							
+					
 
 						</div>
 
@@ -132,7 +126,7 @@
 
 							<div id="display2"><h3><span id="wrong"><strong></strong></span></h3>
 
-								<!--Place for the letters already guessed.  Will not appear twice-->
+								
 							<div id="noPlace"></div>
 
 							</div>
@@ -178,6 +172,8 @@ $(document).ready(function() {
 	var wins=0;
 	var correctGuess=0;
 	var guessCount=8;
+	var usedWordsList =[];
+	var usedGuess = [];
 	
 	var wordList = [ ["h", "o", "r", "s", "e"], ["p", "i", "g", "s"], ["g", "o", "a", "t", "s"], ["b", "a", "r", "n"], ["d", "o", "n", "k", "e", "y"], ["c", "o", "w", "s"], ["f", "i", "e", "l", "d"], ["t", "r", "u", "c", "k"], ["c", "r", "o", "p", "s"], ["g", "a", "r", "d", "e", "n"], ["p", "l", "o", "w"],
 	];
@@ -208,15 +204,15 @@ $(document).ready(function() {
 				$("#wordBlanks").html("<span id='blank1'>" + wordBlank[0] + "</span>" + "<span id='blank2'>" +wordBlank[1] + "</span>" + "<span id='blank3'>" +wordBlank[2] + "</span>" + "<span id='blank4'>" +wordBlank[3] + "</span>");
 			}
 	}
-	
-	blank ();
-    	
+	    	
     
 	$("#click-me").on("click", function() {
         
         alert("Thank you for playing the farm edition of hangman.  All words relate to things you may see on a farm.  To get started, click ok and pick a letter you think may be in the word.  Good luck and enjoy the Game!");
         		
 		console.log(wordCurrent);
+
+		blank ();
 		
     });
 
@@ -230,16 +226,14 @@ $(document).ready(function() {
 
 			if(correctGuess<wordCurrent.length-1){
 				var gameOn = true;
-
 				}
 						
 			for (var i = 0; i < wordCurrent.length; i++){
 				if(wordCurrent[i]===userGuess){
 				var placeholder = true;
 				}
-			}
+			} 
 
-			
 
 			if(placeholder){
 
@@ -251,10 +245,9 @@ $(document).ready(function() {
 						alert("Awesome!  You guessed a correct letter. Keep guessing!")
 						}
 						else {
-							//alert("Congratulations -- you win!");
-							$("#word").html("YOU WIN!!  Press your browser's refresh button.");
-							$("currentWord").html(wordCurrent);
-							
+							$("#word").html("YOU WIN!!  Hit Refresh.");
+							wins++;
+							$("#wins").html(wins);
 						}
 						
 					}	
@@ -266,9 +259,9 @@ $(document).ready(function() {
 						alert("Awesome!  You guessed a correct letter. Keep guessing!")
 						}
 						else {
-							//alert("Congratulations -- you win!");
-							$("#word").html("YOU WIN!!  Press your browser's refresh button.");
-							$("currentWord").html(wordCurrent);
+							$("#word").html("YOU WIN!!  Hit Refresh.");
+							wins++;
+							$("#wins").html(wins);
 							
 						}
 						
@@ -281,9 +274,9 @@ $(document).ready(function() {
 						alert("Awesome!  You guessed a correct letter. Keep guessing!")
 						}
 						else {
-							//alert("Congratulations -- you win!");
-							$("#word").html("YOU WIN!!  Press your browser's refresh button.");
-							$("currentWord").html(wordCurrent);
+							$("#word").html("YOU WIN!!  Hit Refresh.");
+							wins++;
+							$("#wins").html(wins);
 							
 						}
 						
@@ -296,11 +289,10 @@ $(document).ready(function() {
 						alert("Awesome!  You guessed a correct letter. Keep guessing!");
 						}
 						else {
-							//alert("Congratulations -- you win!");
-							$("#word").html("YOU WIN!!  Press your browser's refresh button.");
-							$("currentWord").html(wordCurrent);
-							
-
+							$("#word").html("YOU WIN!!  Hit Refresh.");
+							wins++;
+							$("#wins").html(wins);
+			
 						}
 						
 					}
@@ -312,13 +304,14 @@ $(document).ready(function() {
 						alert("Awesome!  You guessed a correct letter. Keep guessing!")
 						}
 						else {
-							//alert("Congratulations -- you win!");
-							$("#word").html("YOU WIN!!  Press your browser's refresh button.");
-							$("currentWord").html(wordCurrent);
+							$("#word").html("YOU WIN!!  Hit Refresh.");
+							wins++;
+							$("#wins").html(wins);
 							
 						}
 						
 					}
+					
 					else if (userGuess===wordCurrent[5]){
 						$("#blank6").html(userGuess);
 						correctGuess++;
@@ -327,9 +320,9 @@ $(document).ready(function() {
 						alert("Awesome!  You guessed a correct letter. Keep guessing!")
 						}
 						else {
-							//alert("Congratulations -- you win!");
-							$("#word").html("YOU WIN!!  Press your browser's refresh button.");
-							$("currentWord").html(wordCurrent);
+							$("#word").html("YOU WIN!!  Hit Refresh.");
+							wins++;
+							$("#wins").html(wins);
 							
 						}
 						
@@ -337,12 +330,24 @@ $(document).ready(function() {
 			
 			}
 		
-				if (!placeholder && gameOn){
+				if (!placeholder){
 					if(guessCount > 0){
 						alert("Oops!  That letter is not in the word.  Guess Again."); 
 						guessCount--;
 						$("#numGuess").html(guessCount);
 						$("#wrong").append(userGuess + " ");
+						usedGuess.push(userGuess);
+						for (var i=0; i < usedGuess.length; i++) {
+							if(userGuess===usedGuess[i]){
+								var used=true;
+								console.log("true");
+							}
+						}
+						if (used){
+							$("#noPlace").append(userGuess + " ");
+							$("#noPlace").hide();
+						}
+
 					}
 				   	else{
 						alert("Sorry, you lose. Please hit your browser's refresh button and then click on 'Click Me'."); 
@@ -350,8 +355,6 @@ $(document).ready(function() {
 						$("#noPlace").hide();
 					}
 				}
-			
-		
 		});
 	}
 		
