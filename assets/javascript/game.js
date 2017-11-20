@@ -1,3 +1,5 @@
+
+
     function myFunction() {
   		alert("Thank you for playing the farm edition of hangman.  All words relate to things you may see or do on a farm.  To get started, pick a letter that you think may be in the word below.  Good luck and enjoy the Game!");
   	}
