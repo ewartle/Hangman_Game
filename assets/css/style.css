@@ -53,6 +53,12 @@ header {
 
 }
 
+#display2 {
+	padding-bottom: 50px;
+
+}
+
+
 
 .col-md-12 {
 	text-align: center;
@@ -97,4 +103,17 @@ footer {
 	border-color: #377BBF;
 	border-width: 10px;
 	text-align: center;
-	}
+	
+}
+
+#BoxIndex3 {
+	font-family: "Georgia", Times, "Times New Roman", serif;
+	text-align: center;
+	padding: 40px;
+
+
+}
+
+#word{
+	font-size: 75px;
+}

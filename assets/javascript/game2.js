@@ -50,7 +50,7 @@ $(document).ready(function() {
     
     });
 
-    
+    //this is the function that matches userguess to letters in the word and determines what happens in html.
   var match = function(){
 
     var userGuess = $(document).keyup(function(){
@@ -58,17 +58,20 @@ $(document).ready(function() {
       var userGuess = event.key; 
       userGuess=userGuess.toLowerCase();
 
+      //this function allows me to track how many letters are left to be guessed and helps to trigger the win.
       if(correctGuess<wordCurrent.length-1){
         var gameOn = true;
         }
-            
+      
+      //this function helps determine whether the user guess is in the word.
       for (var i = 0; i < wordCurrent.length; i++){
         if(wordCurrent[i]===userGuess){
         var placeholder = true;
+        // wordBlank[i] = wordCurrent[i]
         }
       } 
 
-
+      //this if/else statements handles the treatment if the user guess is in the word.
       if(placeholder){
 
           if (userGuess===wordCurrent[0]){
@@ -154,7 +157,7 @@ $(document).ready(function() {
             alert("Awesome!  You guessed a correct letter. Keep guessing!")
             }
             else {
-              $("#word").html("YOU WIN!!  Hit Refresh and 'click me' to generate a new word.");
+              $("#word").html("YOU WIN!! Hit Refresh.");
               wins++;
               $("#wins").html(wins);
               
@@ -164,31 +167,24 @@ $(document).ready(function() {
       
       }
     
+    //This statement dictates what happens when user guess is not in the word.  
         if (!placeholder){
-          if(guessCount > 0){
-            alert("Oops!  That letter is not in the word.  Guess Again."); 
-            guessCount--;
-            $("#numGuess").html(guessCount);
-            $("#wrong").append(userGuess + " ");
-            usedGuess.push(userGuess);
-            for (var i=0; i < usedGuess.length; i++) {
-              if(userGuess===usedGuess[i]){
-                var used=true;
-                console.log("true");
-              }
-            }
-            if (used){
-              $("#noPlace").append(userGuess + " ");
-              $("#noPlace").hide();
-            }
-
-          }
+          
+          if(guessCount > 0) {
+             
+              alert("Oops!  That letter is not in the word.  Guess Again."); 
+              guessCount--;
+              $("#numGuess").html(guessCount);
+              $("#wrong").append(userGuess + " ");
+                       
+            }     
+                          
             else{
             alert("Sorry, you lose. Please hit your browser's refresh button and then click on 'Click Me'."); 
             $("#noPlace").append(userGuess);
             $("#noPlace").hide();
-          }
-        }
+            }
+        } 
     });
   }
     
