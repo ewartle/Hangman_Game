@@ -25,6 +25,13 @@ $(document).ready(function() {
 
     var random = Math.floor((Math.random()*(wordList.length))); 
     var wordCurrent = wordList[random];
+    function pushWords(){
+      usedWordsList.push(wordCurrent);
+      console.log(usedWordsList);
+    };
+    pushWords();
+    
+    
     var blank = function(){
     
       if (wordCurrent.length===6){
@@ -37,7 +44,7 @@ $(document).ready(function() {
       else if (wordCurrent.length===4){
         $("#wordBlanks").html("<span id='blank1'>" + wordBlank[0] + "</span>" + "<span id='blank2'>" +wordBlank[1] + "</span>" + "<span id='blank3'>" +wordBlank[2] + "</span>" + "<span id='blank4'>" +wordBlank[3] + "</span>");
       }
-  }
+    }
         
     
   $("#click-me").on("click", function() {
@@ -46,7 +53,7 @@ $(document).ready(function() {
             
     console.log(wordCurrent);
 
-    blank ();
+    //blank ();
     
     });
 
@@ -54,29 +61,53 @@ $(document).ready(function() {
   var match = function(){
 
     var userGuess = $(document).keyup(function(){
-      
+     
       var userGuess = event.key; 
+      console.log(userGuess);
       userGuess=userGuess.toLowerCase();
 
+      
       //this function allows me to track how many letters are left to be guessed and helps to trigger the win.
       if(correctGuess<wordCurrent.length-1){
         var gameOn = true;
         }
       
+
+
+      //This function allows me to capture guesses that have already happened.  Will call function later.
+     
+      
+     
+
       //this function helps determine whether the user guess is in the word.
       for (var i = 0; i < wordCurrent.length; i++){
         if(wordCurrent[i]===userGuess){
         var placeholder = true;
-        // wordBlank[i] = wordCurrent[i]
         }
-      } 
+      }
+      //This function helps determine the number of blanks.
+     // for (vari=0; i<wordCurrent.length; i++){ 
+       // wordCurrent[i]=wordBlank[i];
+        //console.log(wordBlank[i]);
+      //$("#wordBlanks").append(wordBlank[i]);
+     //}   
 
-      //these if/else statements handles the treatment if the user guess is in the word.
+  
+
+  
+ 
+
+     //these if/else statements handles the treatment if the user guess is in the word.
       if(placeholder){
 
           if (userGuess===wordCurrent[0]){
             $("#blank1").html(userGuess);
             correctGuess++;
+            function pushGuess(){
+            usedGuess.push(userGuess);
+            console.log(usedGuess);
+            }
+            pushGuess();
             if (gameOn){
             console.log(correctGuess);
             alert("Awesome!  You guessed a correct letter. Keep guessing!")
@@ -185,9 +216,10 @@ $(document).ready(function() {
            }
         } 
     });
-  }
+}
+
     
-  match ();
+  
   //**The code below is me trying to come up with a reset.  I was not successful in this effort.  
 
   //$("#clear").on("click", function() {
@@ -212,6 +244,7 @@ $(document).ready(function() {
     //blank();    
     //match();
   //}
+  match();
 
 }); 
     
