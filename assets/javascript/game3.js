@@ -50,7 +50,8 @@ $("#click-me").on("click", function() {
     $("#wrong").html(usedGuess);
     $("#word").html("???????");
     console.log(usedGuess);
-	 random = Math.floor((Math.random()*(wordList.length)));
+	   random = Math.floor((Math.random()*(wordList.length)));
+     $("#display2").empty();
 
 	wordCurrent = wordList[random];
 	console.log(wordCurrent);
@@ -133,13 +134,13 @@ $("#click-me").on("click", function() {
             }
             pushGuess();
             $("#numGuess").html(guessCount);
-            $("#wrong").append(userGuess + " ");
+            $("#display2").append(userGuess + " ");
             }
        
         if (!yes&&!count&&!alreadyGuess){
             alert("Sorry, you lose. Please click on 'New Word'."); 
-            $("#noPlace").append(userGuess);
-            $("#noPlace").hide(); 
+            $("#hidden").append(userGuess);
+            $("#hidden").hide(); 
             guessCount=0;
             $("#numGuess").html(guessCount);
             }
