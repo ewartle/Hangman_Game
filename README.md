@@ -7,12 +7,6 @@ This application employs a variety of technologies, including:  HTML, CSS, Boots
 
 ## Instructions:  
 
-The application can be viewed at this website:  https://hidden-oasis-18453.herokuapp.com/.  
+The application can be viewed at this website:  https://ewartle.github.io/Hangman_Game/.  This application is still in development.  
 
-Upon entering the application, first time users are asked to create a new user and returning users are asked to provide their log-in credentials.  
-
-One the user is logged in, the user can access the items on their individualized NexTime to-do lists.  If the user has no items on the list, the user will be redirected to an interface where the user can create to-do items through entering the task, selecting a corresponding category for that task, and adding any notes that the user has associated with that task.  
-
-Once the list is populated, the user has a variety of display options.  The default is the list in its entirety, but if the uses clicks on the category icon next to the task name, the user can view all items in that category.  By clicking on the icon to the right of the task name, the user can view the item in detail and make any updates to that item.  By clicking on the task name, the user can mark the task as complete, and by clicking on the delete icon, the user can delete items from the to-do list.  
-
-Once NexTime identifies places of business in the area where a user can complete one or more items on their list, the application will send a modal alert to the user indicating the places within a certain distance from the user.  
+Upon entering the application, users are given a set of blanks to correspond with a hidden word.  Users can start guessing letters by pressing the letter on the keypad.  If the user guesses the word, the user will be alerted to a win and can play again by clicking on "new word."  If the correct word has not been guessed after 8 guesses, the user will be alerted to the loss and can play again by selecting "new word."  Enjoy the application!
